@@ -11,8 +11,8 @@ void function () {
         const moveArea = document.querySelector('.move-mouse')
 
         moveArea.addEventListener('mousemove', normalHandler)
-        moveArea.addEventListener('mousemove', debounce(debounceHandler, 1000))
-        moveArea.addEventListener('mousemove', throttle(throttleHandler, 1000))
+        moveArea.addEventListener('mousemove', debounce(debounceHandler, 500))
+        moveArea.addEventListener('mousemove', throttle(throttleHandler, 500))
     }
 
     function addRect(el) {

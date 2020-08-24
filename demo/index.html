@@ -2,8 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Debounce and Throttle Demo</title>
     <style>
+        body, html, h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #2d2d2d;
+            color: white;
+            text-align: center;
+        }
+
         .move-mouse {
             width: 220px;
             height: 600px;
@@ -16,7 +27,7 @@
         }
 
         .body {
-            padding: 0 20px;
+            padding: 10px 20px;
             margin-left: 270px;
         }
 
@@ -34,16 +45,19 @@
     </style>
 </head>
 <body>
+<div class="header">
+    <h1>Debounce and Throttle</h1>
+</div>
 <div class="move-mouse">
-    在这里移动你的鼠标
+    在这里移动你的鼠标触发mousemove事件
 </div>
 <div class="body">
     <div class="body__wrapper">
-        debounce:
+        debounce: 在事件fn触发后，在waitTime的计时完成后执行fn；如果计时期间fn再次触发，重置waitTime计时，最终执行最后一次fn调用
         <div class="debounce__wrapper"></div>
     </div>
     <div class="body__wrapper">
-        throttle:
+        throttle: 在事件fn首次触发后，立即执行，在waitTime的计时内再次触发fn，将在计时完成后执行最后一次fn调用
         <div class="throttle__wrapper"></div>
     </div>
     <div class="body__wrapper">
