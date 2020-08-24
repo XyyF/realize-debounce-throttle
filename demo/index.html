@@ -4,50 +4,53 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-        body {
-            font-family: "Roboto","Helvetica",Arial;
-            font-weight: 200;
-            color: #777;
-        }
-        #moveonme {
-            width: 200px;
+        .move-mouse {
+            width: 220px;
             height: 600px;
             background: #f5f5f5;
             border: 1px solid #aaa;
             float: left;
-            box-sizing: border-box;
             padding: 25px;
             text-align: center;
             font-size: 18px;
         }
 
-        .backtoblog {
-            width: 200px;
-            padding: 10px;
-            background: #f5f5f5;
-            border: 1px solid #aaa;
-            color: #777;
-            display: inline-block;
-            text-decoration: none;
-            transition: 0.2s all;
-            box-sizing: border-box;
-            position: relative;
-            top: -1px;
-            text-align: center;
+        .body {
+            padding: 0 20px;
+            margin-left: 270px;
         }
 
-        .backtoblog:hover {
-            border: 1px solid #aaa;
-            background: transparent;
+        .body__wrapper {
+            min-height: 100px;
+        }
+
+        .body__wrapper .item {
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+            background-color: green;
+            margin: 1px;
         }
     </style>
 </head>
 <body>
-
-<div id="moveonme" >
-    move your mouse here
+<div class="move-mouse">
+    在这里移动你的鼠标
 </div>
-<canvas id="paintonme" height="600" width="600" style="float:right;"></canvas>
+<div class="body">
+    <div class="body__wrapper">
+        debounce:
+        <div class="debounce__wrapper"></div>
+    </div>
+    <div class="body__wrapper">
+        throttle:
+        <div class="throttle__wrapper"></div>
+    </div>
+    <div class="body__wrapper">
+        normal:
+        <div class="normal__wrapper"></div>
+    </div>
+</div>
 <script src="../src/debounce.js"></script>
 <script src="../src/throttle.js"></script>
 <script src="./entry.js"></script>

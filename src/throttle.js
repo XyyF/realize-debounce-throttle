@@ -1,10 +1,6 @@
 function throttle(fn, waitTime = 0) {
     let timer = null, lastThis = null, lastArguments = null
     return function() {
-        if (timer) {
-            lastThis = this
-            lastArguments = arguments
-        }
         if (!timer) {
             fn.apply(this, arguments)
             timer = setTimeout(() => {
@@ -13,9 +9,11 @@ function throttle(fn, waitTime = 0) {
                 }
                 lastThis = null
                 lastArguments = null
-                clearTimeout(timer)
                 timer = null
             }, waitTime)
+        } else {
+            lastThis = this
+            lastArguments = arguments
         }
     }
 }
